@@ -1,5 +1,5 @@
 # Changes made in this fork:
-This is my first attempt at working on a github script. This is a fork from rishbobb/video2video who added Controlnet and direct Video support came from the orginal creator Filarius/video2video fork. Just doing my bit to help improved this so it can be added back to Automatic1111 avalible extensions. Thanks for the script, I am still testing it.  
+This is my first attempt at working on a github script. This is a fork from rishbobb/video2video who added Controlnet and direct Video support came from the orginal creator Filarius/video2video fork. Just doing my bit to help improved this so it can be added back to Automatic1111 avalible extensions. 
 
 # About
 Filarius, "basic Video2Video plugin for img2img video processing for AUTOMATIC1111 Web UI and no more tons of image files on hard disk from video "unpacking"! Ha-ha.
