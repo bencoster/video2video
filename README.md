@@ -1,6 +1,9 @@
 # Changes made in this fork:
 This is my first attempt at working on a github script. This is a fork from rishbobb/video2video which added Controlnet and direct Video support came from Filarius/video2video fork. Happy to be corrected
 
+## Backgound 
+This is a script for Automatic1111 which can be installed following the instructions at https://github.com/AUTOMATIC1111/stable-diffusion-webui/ 
+
 ## Installation
 To install the video2video package from its Github repository on Windows, you can follow these steps. Remember to hit enter/return key on each command:
 
