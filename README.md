@@ -11,29 +11,25 @@ To install the video2video package from its Github repository on Windows, you ca
 ```shell
 C:\>cd "C:\Vid-Extract\stable-diffusion-webui"   <---- Enter in your Automatic1111 installation directory path in the quotations. Then hit enter
 C:\Vid-Extract\stable-diffusion-webui            <---- The prompt should now show your
+```
 Clone the video2video repository to Automatic1111 location on your computer. In this example the above "C:\Vid-Extract\stable-diffusion-webui" is where Automatic1111 was installed, run the following command to clone the video2video repository. This will download the video2video github repository to your local machine.
-shell
-Copy code
+```shell
 git clone https://github.com/bencoster/video2video.git
+```
 When you type the above at the commandline on Windows in this example it will look like this at the command prompt:
-
-shell
-Copy code
 C:\Vid-Extract\stable-diffusion-webui\git clone https://github.com/bencoster/video2video.git
 For this example the newly created video2video installation is now at:
-
-shell
-Copy code
+```shell
 C:\Vid-Extract\stable-diffusion-webui\video2video
+```
 Install the required packages: Navigate to the root directory of the video2video repository and run the following command to install the required Python packages:
-shell
-Copy code
+```shell
 cd C:\Vid-Extract\stable-diffusion-webui\video2video
+```
 This will install all the required packages listed in the requirements.txt file.
-
-shell
-Copy code
+```shell
 pip install -r requirements.txt
+```
 Installation complete and now continue with the Support for ControlNet.
 
 # Support for ControlNet:
