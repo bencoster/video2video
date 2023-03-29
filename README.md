@@ -1,3 +1,7 @@
+# About
+Filarius, "basic Video2Video plugin for img2img video processing for AUTOMATIC1111 Web UI and no more tons of image files on hard disk from video "unpacking"! Ha-ha.
+There just few (batch size) frames stored in memory. Also i add a "latent space temporal blending" for trying to make video consistency. Actually its only means - before each step, latent space of image will be blended with latent space of previous image on same step. Need a FFmpeg installed. Implemented auto install for Windows. Video in this post demonstrate result with different latent blending value see https://www.reddit.com/r/StableDiffusion/comments/117jbft/video2video_plugin_with_temporal_latent_blending/
+
 # Changes made in this fork:
 This is my first attempt at working on a github script. This is a fork from rishbobb/video2video which added Controlnet and direct Video support came from Filarius/video2video fork. Happy to be corrected
 
