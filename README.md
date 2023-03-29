@@ -45,7 +45,7 @@ Successfully installed sk-video-1.1.10
 ```
 5. **Installing dependency FFMPEG**
 To install the latest compiled FFmpeg for Linux, Windows, and macOS, follow the instructions for each operating system below:
-*Linux*
+**Linux**
 For Ubuntu and other Debian-based systems, you can use the following commands:
 ```shell
 sudo add-apt-repository ppa:jonathonf/ffmpeg-4
@@ -62,7 +62,7 @@ For CentOS and RHEL, use the following commands:
 sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-7.noarch.rpm
 sudo yum install ffmpeg
 ```
-*Windows*
+**Windows**
 Visit the FFmpeg official website's download page at https://ffmpeg.org/download.html.
 Under the "Windows" section, click on the link for "Windows Builds" provided by gyan.dev or BtbN.
 Download the appropriate build for your system (32-bit or 64-bit) in either a static or shared version.
@@ -75,15 +75,15 @@ Click on "New" and add the path to the bin folder within the extracted FFmpeg fo
 Click "OK" to save the changes.
 Now, you can use FFmpeg from the command prompt.
 
-*macOS*
+**macOS**
 Using Homebrew, you can install FFmpeg on macOS by running the following commands in the Terminal:
 
 ```shell
 brew update
 brew install ffmpeg
 ```
-If you don't have Homebrew installed, you can install it by following the instructions at https://brew.sh/.
-After the installation is complete, you can use FFmpeg from the Terminal.
+*If you don't have Homebrew installed, you can install it by following the instructions at https://brew.sh/.
+After the installation is complete, you can use FFmpeg from the Terminal.*
 
 6. Installation complete and now continue with the Support for ControlNet.
 
