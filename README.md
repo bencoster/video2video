@@ -1,10 +1,10 @@
 # Changes made in this fork:
-This is my first attempt at working on a github script. This is a fork from rishbobb/video2video which added Controlnet and direct Video support to Filarius/video2video fork. 
+This is my first attempt at working on a github script. This is a fork from rishbobb/video2video which added Controlnet and direct Video support came from Filarius/video2video fork. Happy to be corrected
 
 ## Installation
 To install the video2video package from its Github repository on Windows, you can follow these steps. Remember to hit enter/return key on each command:
 
-1. **Install Git for Windows**: Go to the Git for Windows website (https://gitforwindows.org/) and download and install the latest version of Git for Windows.
+1. **Install Git for Windows**: Go to the Git for Windows website (https://git-scm.com/download/win) and download and install the latest version of Git for Windows.
 
 2. **Update the example video2video installation destination with your Automatic1111 installation directory path**. For example on my computer this is found in this location "C:\Vid-Extract\stable-diffusion-webui" adjust this to suit your computer.
 ```shell
