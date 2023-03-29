@@ -1,8 +1,23 @@
-# Author: Filarius
-# Credits: orcist1
-# https://github.com/Filarius
+# Author: Ben Coster
+# Credits: orcist1, rishbobb and Filarius
 # https://github.com/Filarius/video2video
+# https://github.com/rishbobb/video2video
+# https://github.com/bencoster/video2video
 
+#Introduction
+#This code appears to be a script for processing video files, with a focus on applying image-to-image processing through a deep learning model. 
+# Here is a summary of the different parts of the code:
+#   Import necessary modules and libraries.
+#   Define the LatentMemory class, which is responsible for managing and interpolating latent variables for temporal blending in the generated video.
+#   Define the Script class, which is responsible for the user interface and processing of the video files.
+#   The ui() method defines the user interface, including input fields and sliders for various parameters.
+#   The run() method processes the video files, including reading input files, applying image-to-image processing, and saving the output files.
+#   Define the ffmpeg class, which is a wrapper around the FFmpeg command-line tool for handling video files. This class includes methods for 
+#   downloading and installing FFmpeg, as well as reading and writing video files.
+#   The script works with Gradio, a library for creating interactive and easy-to-use user interfaces for machine learning models. It also uses 
+#   the scikit-video library (imported as skvideo) for handling video files and the Pillow library (imported as Image) for image manipulation.
+
+# Import necessary modules and libraries
 import json
 import os,sys
 import shutil
@@ -27,9 +42,12 @@ from modules import processing
 from modules.shared import state
 import json
 
-try: # make me know if there is better solution
+# Attempt to import skvideo and install if not available
+try: 
+    # make me know if there is better solution
     import skvideo
 except:
+     # Installation code
     if 'VENV_DIR' in os.environ:
         path = os.path.join(os.environ["VENV_DIR"],'scripts','python')
     elif 'PYTHON' in os.environ:
@@ -40,7 +58,9 @@ except:
     os.system(path+ " -m pip install sk-video")
     import skvideo
 
+# Class for managing and interpolating latent variables for temporal blending in the generated video
 class LatentMemory:
+    # Initialization of the LatentMemory class
     def __init__(self, interp_factor=0.1, scale_factor = 0.95):
         self.latents_now = []
         self.latents_mem = []
@@ -48,34 +68,40 @@ class LatentMemory:
         self.ifactor = interp_factor * 0.5 #
         self.nowfactor = self.ifactor
         self.scalefactor = scale_factor
-
+  
+    # Method to add a latent variable to the current list
     def put(self,latent):
         self.latents_now.append(latent)
-
+    
+    # Method to retrieve a latent variable from the memory list
     def get(self):
         return self.latents_mem.pop(0)
-
+    
+    # Method to interpolate two latent variables
     def interpolate(self, latent1, latent2):
         latent = latent1 * (1. - self.nowfactor) + latent2 * self.nowfactor
         self.nowfactor = self.nowfactor * self.scalefactor
         return latent
-
+    
+    # Method to flush the current latent variables to memory
     def flush(self):
         self.latents_mem = self.latents_now
         self.latents_now = []
         self.nowfactor = self.ifactor
         self.flushed = True
 
-
+# Script class for the user interface and processing of the video files
 class Script(scripts.Script):
-    # script title to show in ui
+    # Method to return the title of the script
     def title(self):
         return 'Video2Video'
-
+    
+    # Method to determine if the script should be shown
     def show(self, is_img2img):
         #return scripts.AlwaysVisible
         return is_img2img
-
+    
+    # Initialization of the Script class
     def __init__(self):
         self.img2img_component = gr.Image()
         self.img2img_inpaint_component = gr.Image()
@@ -85,7 +111,7 @@ class Script(scripts.Script):
         #model.load_model('flownet.pkl', -1)
 
 
-    # ui components
+    # Method to define the user interface
     def ui(self, is_visible):
             def img_dummy_update(arg):
                 if arg is None:
@@ -135,11 +161,13 @@ class Script(scripts.Script):
             #self.img2img_component.update(Image.new("RGB",(512,512),0))
             return [tmp_path, fps, file,sfactor,sexp,freeze_input_fps,keep_fps,use_controlnet]
 
+    # Method to update components after they have been created
     def after_component(self, component, **kwargs):
         if component.elem_id == "img2img_image":
             self.img2img_component = component
             return self.img2img_component
-
+        
+    # Method to run the script and process the video files
     def run(self, p:StableDiffusionProcessingImg2Img, file_path, fps, file_obj, sfactor, sexp, freeze_input_fps, keep_fps, use_controlnet, *args):
             save_dir = "outputs/img2img-video/"
             os.makedirs(save_dir, exist_ok=True)
@@ -282,8 +310,9 @@ class Script(scripts.Script):
             self.is_have_callback = False
             return Processed(p, [], p.seed, proc.info)
 
-
+# Wrapper class for the FFmpeg command-line tool for handling video files
 class ffmpeg:
+     # Initialization of the ffmpeg class
     def __init__(
         self,
         cmdln,
@@ -314,6 +343,7 @@ class ffmpeg:
 
         self._process = None
 
+    # Method to start the FFmpeg process
     def start(self):
         try:
             print(self._cmdln)
@@ -322,7 +352,8 @@ class ffmpeg:
             )
         except Exception as e:
             print(e)
-
+  
+    # Method to read a specified number of bytes from the FFmpeg process' stdout
     def readout(self, cnt=None):
         if cnt is None:
             buf = self._process.stdout.read()
@@ -332,23 +363,29 @@ class ffmpeg:
 
         return arr
 
+    # Method to read a specified number of bytes from the FFmpeg process' stderr
     def readerr(self, cnt):
         buf = self._process.stderr.read(cnt)
         return np.frombuffer(buf, dtype=np.uint8)
 
+    # Method to write an array to the FFmpeg process' stdin
     def write(self, arr):
         bytes = arr.tobytes()
         self._process.stdin.write(bytes)
-
+        
+    # Method to close the FFmpeg process' stdin
     def write_eof(self):
         if self._stdin != None:
             self._process.stdin.close()
 
+    # Method to check if the FFmpeg process is still running
     def is_running(self):
         return self._process.poll() is None
 
+    # Static method to install FFmpeg
     @staticmethod
     def install(path):
+         # Method to install FFmpeg depending on the user's operating system
         from basicsr.utils.download_util import load_file_from_url
         from zipfile import ZipFile
 
@@ -385,6 +422,3 @@ class ffmpeg:
     def seconds(input="00:00:00"):
         [hours, minutes, seconds] = [int(pair) for pair in input.split(":")]
         return hours * 3600 + minutes * 60 + seconds
-
-
-
