@@ -113,10 +113,10 @@ Need a FFmpeg. For OS Windows implemented automatic installation of FFmpeg.
 Under development, bugs applied.
 
 ## Dependencies
-automatic1111 *<--- See Installation Notes above*
-git       *<--- See Installation Notes above*
-ffmpeg    *<--- See Installation Notes above*
-skvideo   *<--- See Installation Notes above or run in a terminal/command prompt: pip install sk-video*
+- automatic1111 <--- See Installation Notes above
+- git       <--- See Installation Notes above
+- ffmpeg    <--- See Installation Notes above
+- skvideo   <--- See Installation Notes above or run in a terminal/command prompt: pip install sk-video
 
 ## TODO
 
