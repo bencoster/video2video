@@ -7,7 +7,6 @@ To install the video2video package from its Github repository on Windows, you ca
 1. **Install Git for Windows**: Go to the Git for Windows website (https://gitforwindows.org/) and download and install the latest version of Git for Windows.
 
 2. **Update the example video2video installation destination with your Automatic1111 installation directory path**. For example on my computer this is found in this location "C:\Vid-Extract\stable-diffusion-webui" adjust this to suit your computer.
-
 ```shell
 C:\>cd "C:\Vid-Extract\stable-diffusion-webui"   <---- Enter in your Automatic1111 installation directory path in the quotations. Then hit enter
 C:\Vid-Extract\stable-diffusion-webui            <---- The prompt should now show your
@@ -46,28 +45,24 @@ Successfully installed sk-video-1.1.10
 ```
 5. **Installing dependency FFMPEG**
 To install the latest compiled FFmpeg for Linux, Windows, and macOS, follow the instructions for each operating system below:
-
-**- Linux**
+*Linux*
 For Ubuntu and other Debian-based systems, you can use the following commands:
 ```shell
-Copy code
 sudo add-apt-repository ppa:jonathonf/ffmpeg-4
 sudo apt-get update
 sudo apt-get install ffmpeg
 ```
 For Fedora, use the following commands:
 ```shell
-Copy code
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf install ffmpeg
 ```
 For CentOS and RHEL, use the following commands:
 ```shell
-Copy code
 sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-7.noarch.rpm
 sudo yum install ffmpeg
 ```
-**- Windows**
+*Windows*
 Visit the FFmpeg official website's download page at https://ffmpeg.org/download.html.
 Under the "Windows" section, click on the link for "Windows Builds" provided by gyan.dev or BtbN.
 Download the appropriate build for your system (32-bit or 64-bit) in either a static or shared version.
@@ -80,11 +75,10 @@ Click on "New" and add the path to the bin folder within the extracted FFmpeg fo
 Click "OK" to save the changes.
 Now, you can use FFmpeg from the command prompt.
 
-**- macOS**
+*macOS*
 Using Homebrew, you can install FFmpeg on macOS by running the following commands in the Terminal:
 
 ```shell
-Copy code
 brew update
 brew install ffmpeg
 ```
