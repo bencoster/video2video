@@ -2,7 +2,7 @@ import launch
 import os
 
 # Construct the path to the requirements.txt file in the video2video folder inside the extensions folder
-req_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), "video2video", "requirements.txt")
+req_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), "requirements.txt")
 
 # Open the requirements.txt file
 with open(req_file) as file:
