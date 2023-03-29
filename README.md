@@ -52,8 +52,8 @@ Successfully installed sk-video-1.1.10
 ```
 5. **Installing dependency FFMPEG**
 To install the latest compiled FFmpeg for Linux, Windows, and macOS, follow the instructions for each operating system below:
-**Linux** 
 
+**Linux** 
 For Ubuntu and other Debian-based systems, you can use the following commands:
 ```shell
 sudo add-apt-repository ppa:jonathonf/ffmpeg-4
