@@ -119,9 +119,9 @@ Under development, bugs applied.
 
 ## Dependencies
 - automatic1111 <--- See Installation Notes above
-- git       <--- See Installation Notes above
-- ffmpeg    <--- See Installation Notes above
-- skvideo   <--- See Installation Notes above or run in a terminal/command prompt: pip install sk-video
+- git       <--- See Installation Notes above **(Git is installed when you installed Automatic1111)**
+- ffmpeg    <--- See Installation Notes above **(Automatically downloaded and installed in to Automatic1111 root folder for Windows Users)**
+- skvideo   <--- See Installation Notes above or run in a terminal/command prompt: pip install sk-video **(Automatically installed now)**
 
 ## TODO
 
