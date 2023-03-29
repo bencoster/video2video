@@ -1,5 +1,5 @@
 # Changes made in this fork:
-This is my first attempt at working on a github script. This is a fork from rishbobb/video2video which added Controlnet support to Filarius/video2video fork. 
+This is my first attempt at working on a github script. This is a fork from rishbobb/video2video which added Controlnet and direct Video support to Filarius/video2video fork. 
 
 ## Installation
 To install the video2video package from its Github repository on Windows, you can follow these steps. Remember to hit enter/return key on each command:
