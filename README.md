@@ -6,28 +6,25 @@ To install the video2video package from its Github repository on Windows, you ca
 
 1. Install Git for Windows: Go to the Git for Windows website (https://gitforwindows.org/) and download and install the latest version of Git for Windows.
 
-Update the installation destination directory path: Navigate to the directory where you want to install video2video, for example "C:\Vid-Extract\stable-diffusion-webui". Then, clone the video2video repository by running the following command:
+2. Update the installation destination directory path: Navigate to the directory where you want to install video2video, for example "C:\Vid-Extract\stable-diffusion-webui". Then, clone the video2video repository by running the following command:
 
-bash
-Copy code
 git clone https://github.com/bencoster/video2video.git
+
 This will download the video2video repository to your local machine. The newly created video2video installation will be located at:
 
-makefile
-Copy code
 C:\Vid-Extract\stable-diffusion-webui\video2video
-Install the required packages: Navigate to the root directory of the video2video repository and run the following command to install the required Python packages:
-bash
-Copy code
+
+3. Install the required packages: Navigate to the root directory of the video2video repository and run the following command to install the required Python packages:
+
 cd C:\Vid-Extract\stable-diffusion-webui\video2video
 pip install -r requirements.txt
+
 This will install all the required packages listed in the requirements.txt file.
 
-Installation complete and now continue with the Support for ControlNet.
+4. Installation complete and now continue with the Support for ControlNet.
 Note: Remember to hit enter/return key on each command when running the above commands on the Windows command line.
 
-
-Support for ControlNet:
+# Support for ControlNet:
 
 How to use:
 When generating, enable the ControlNet tab (Make sure you have ControlNet extension installed), and select your settings
