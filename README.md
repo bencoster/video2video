@@ -2,7 +2,7 @@
 This is my first attempt at working on a github script. This is a fork from rishbobb/video2video which added Controlnet and direct Video support came from Filarius/video2video fork. Happy to be corrected
 
 ## Backgound 
-This is a script for Automatic1111 which can be installed following the instructions at https://github.com/AUTOMATIC1111/stable-diffusion-webui/ 
+Install Automatic1111 before proceeding to install the video2video script. Automatic1111 can be installed following the instructions at https://github.com/AUTOMATIC1111/stable-diffusion-webui/ 
 
 ## Installation
 To install the video2video package from its Github repository on Windows, you can follow these steps. Remember to hit enter/return key on each command:
@@ -113,9 +113,10 @@ Need a FFmpeg. For OS Windows implemented automatic installation of FFmpeg.
 Under development, bugs applied.
 
 ## Dependencies
-git       <--- See Installation Notes above
-ffmpeg    <--- See Installation Notes above
-skvideo   <--- See Installation Notes above or run in a terminal/command prompt: pip install sk-video
+automatic1111 *<--- See Installation Notes above*
+git       *<--- See Installation Notes above*
+ffmpeg    *<--- See Installation Notes above*
+skvideo   *<--- See Installation Notes above or run in a terminal/command prompt: pip install sk-video*
 
 ## TODO
 
