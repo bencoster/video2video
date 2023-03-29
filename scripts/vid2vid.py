@@ -4,17 +4,17 @@
 # https://github.com/rishbobb/video2video
 # https://github.com/bencoster/video2video
 
-#Introduction
-#This code appears to be a script for processing video files, with a focus on applying image-to-image processing through a deep learning model. 
-# Here is a summary of the different parts of the code:
-#   Import necessary modules and libraries.
-#   Define the LatentMemory class, which is responsible for managing and interpolating latent variables for temporal blending in the generated video.
-#   Define the Script class, which is responsible for the user interface and processing of the video files.
-#   The ui() method defines the user interface, including input fields and sliders for various parameters.
-#   The run() method processes the video files, including reading input files, applying image-to-image processing, and saving the output files.
-#   Define the ffmpeg class, which is a wrapper around the FFmpeg command-line tool for handling video files. This class includes methods for 
+#   Introduction
+#   This script is for processing video files, with a focus on applying image-to-image processing through a deep learning model of Automatic1111 Extensions. 
+#   Here is a summary of the different parts of the code:
+#   -Import necessary modules and libraries.
+#   -Define the LatentMemory class, which is responsible for managing and interpolating latent variables for temporal blending in the generated video.
+#   -Define the Script class, which is responsible for the user interface and processing of the video files.
+#   -The ui() method defines the user interface, including input fields and sliders for various parameters.
+#   -The run() method processes the video files, including reading input files, applying image-to-image processing, and saving the output files.
+#   -Define the ffmpeg class, which is a wrapper around the FFmpeg command-line tool for handling video files. This class includes methods for 
 #   downloading and installing FFmpeg, as well as reading and writing video files.
-#   The script works with Gradio, a library for creating interactive and easy-to-use user interfaces for machine learning models. It also uses 
+#   - The script works with Gradio, a library for creating interactive and easy-to-use user interfaces for machine learning models. It also uses 
 #   the scikit-video library (imported as skvideo) for handling video files and the Pillow library (imported as Image) for image manipulation.
 
 # Import necessary modules and libraries
