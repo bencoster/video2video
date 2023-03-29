@@ -30,6 +30,17 @@ This will install all the required packages listed in the requirements.txt file.
 ```shell
 pip install -r requirements.txt
 ```
+The pip install command above resulted in this successfull install message on my Windows 11 computer
+```shell
+C:\Vid-Extract\stable-diffusion-webui\video2video>pip install -r requirements.txt
+Collecting sk-video
+  Downloading sk_video-1.1.10-py2.py3-none-any.whl (2.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 7.5 MB/s eta 0:00:00
+Requirement already satisfied: scipy in c:\users\bcost\appdata\local\programs\python\python310\lib\site-packages (from sk-video->-r requirements.txt (line 1)) (1.9.3)
+Requirement already satisfied: numpy in c:\users\bcost\appdata\local\programs\python\python310\lib\site-packages (from sk-video->-r requirements.txt (line 1)) (1.24.0)
+Installing collected packages: sk-video
+Successfully installed sk-video-1.1.10
+```
 Installation complete and now continue with the Support for ControlNet.
 
 # Support for ControlNet:
