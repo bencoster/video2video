@@ -193,7 +193,11 @@ class Script(scripts.Script):
                 self.is_have_callback = True
 
             if not os.path.isfile(file_path):
-                file_path = file_obj.name
+                 if file_obj is not None:
+                    file_path = file_obj.name
+                else:
+                # Handle the case when file_obj is None, e.g., log an error, assign a default value, or raise a custom exception
+                    raise ValueError("Missing input filename file_obj cannot be None")
 
             initial_seed = p.seed
             if initial_seed == -1:
@@ -390,7 +394,8 @@ class ffmpeg:
         from zipfile import ZipFile
 
         ffmpeg_url = "https://github.com/GyanD/codexffmpeg/releases/download/5.1.1/ffmpeg-5.1.1-full_build.zip"
-        ffmpeg_dir = os.path.join(path, "ffmpeg")
+        ffmpeg_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), "requirements.txt")
+        os.path.join(path, "ffmpeg")
 
         if not os.path.exists(os.path.abspath(os.path.join(ffmpeg_dir, "ffmpeg.exe"))):
             print("Downloading FFmpeg")
